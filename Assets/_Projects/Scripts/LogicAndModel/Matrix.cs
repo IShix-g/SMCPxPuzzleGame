@@ -22,6 +22,7 @@ namespace LogicAndModel
             Assert.IsTrue(objects.Rank is >= 1 and <= 2, $"2次元以下の配列を渡してください。length:{objects.Rank}");
             _objects = objects;
             Size = new MatrixSize(_objects.GetLength(0), _objects.GetLength(1));
+            ObjectCount = GetObjectLength();
         }
 
         public Matrix(MatrixSize size)
@@ -66,7 +67,7 @@ namespace LogicAndModel
         public T Get(int column, int row) => _objects[column, row];
         
         /// <summary>
-        /// すべて取得
+        /// すべてのオブジェクトを取得
         /// </summary>
         public IEnumerable<T> GetAll()
         {
@@ -99,6 +100,25 @@ namespace LogicAndModel
             }
         }
 
+        /// <summary>
+        /// 存在するオブジェクトの数を取得
+        /// </summary>
+        int GetObjectLength()
+        {
+            var count = 0;
+            for (var column = 0; column < Size.Column; column++)
+            {
+                for (var row = 0; row < Size.Row; row++)
+                {
+                    if (_objects[column, row] != default)
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+        
         /// <summary>
         /// 削除
         /// </summary>
