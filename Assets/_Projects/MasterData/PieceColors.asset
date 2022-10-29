@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bff2b9596b4bfc940b31d48a685f5e, type: 3}
+  m_Name: PieceColors
+  m_EditorClassIdentifier: 
+  _colors:
+  - ColorType: 1
+    Color: {r: 1, g: 0.9882353, b: 0.9490196, a: 1}
+  - ColorType: 2
+    Color: {r: 0.8, g: 0.77254903, b: 0.7254902, a: 1}
+  - ColorType: 3
+    Color: {r: 0.2509804, g: 0.23921569, b: 0.22352941, a: 1}
+  - ColorType: 4
+    Color: {r: 0.94509804, g: 0.35686278, b: 0.4019298, a: 1}
+  - ColorType: 5
+    Color: {r: 0, g: 0.9607843, b: 0.83137256, a: 1}
+  - ColorType: 6
+    Color: {r: 0.99607843, g: 0.89411765, b: 0.2509804, a: 1}
+  - ColorType: 7
+    Color: {r: 0, g: 0.73333335, b: 0.9764706, a: 1}
+  - ColorType: 8
+    Color: {r: 0.94509804, g: 0.35686275, b: 0.70980394, a: 1}
+  - ColorType: 9
+    Color: {r: 1, g: 0.42745098, b: 0.15686275, a: 1}
+  - ColorType: 10
+    Color: {r: 0.60784316, g: 0.3647059, b: 0.8980392, a: 1}
+  - ColorType: 11
+    Color: {r: 0.9339623, g: 0.2713783, b: 0.2511125, a: 1}

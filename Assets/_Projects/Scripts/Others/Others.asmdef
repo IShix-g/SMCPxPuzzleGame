@@ -1,0 +1,18 @@
+{
+    "name": "Others",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cd16c4e26ebfa41b49943bf9028545e3",
+        "GUID:323b3c7e63363424a9accd38eb790b27",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
