@@ -10,6 +10,9 @@ This project is a sample project using **SMCP**.
 ### Plug-ins used
 - [VContainer](https://github.com/hadashiA/VContainer)
 
+### Class diagram
+![](ReadMeImages/sample_classes.png)
+
 # What is SMCP?
 SMCP is an architecture for separating game logic and data models from MonoBehaviour.
 To learn more, please visit this [blog](https://qiita.com/IShix/items/5e1450ad8fb7f4a39f22) (Japanese only).
