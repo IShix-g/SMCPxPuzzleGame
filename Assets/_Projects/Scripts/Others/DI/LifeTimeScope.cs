@@ -15,8 +15,8 @@ namespace Others
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.Register<PlayerPrefsGameProgressRepository>(Lifetime.Scoped).As<IGameProgressRepository>();
-            builder.Register<SimpleBlockOrder>(Lifetime.Scoped).As<IBlockOrder>();
+            builder.Register<IGameProgressRepository, PlayerPrefsGameProgressRepository>(Lifetime.Scoped);
+            builder.Register<IBlockOrder, SimpleBlockOrder>(Lifetime.Scoped);
             builder.Register<Game>(Lifetime.Scoped);
         }
     }
