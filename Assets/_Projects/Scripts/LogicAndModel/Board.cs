@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine.Assertions;
 
 namespace LogicAndModel
@@ -41,6 +42,7 @@ namespace LogicAndModel
         /// <summary>
         /// ブロックの設置
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetBlock(Block block, int startColumn, int startRow)
         {
             _pieces.Merge(block.PullPieces(), startColumn, startRow);

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace View
 {
-    public class PointText : MonoBehaviour
+    public sealed class PointText : MonoBehaviour
     {
         [SerializeField] GameManager _gameManager;
         [SerializeField] TextMeshProUGUI _text;

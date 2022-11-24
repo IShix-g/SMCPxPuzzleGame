@@ -4605,7 +4605,7 @@ GameObject:
   - component: {fileID: 1257033119}
   - component: {fileID: 1257033118}
   m_Layer: 0
-  m_Name: GameContena
+  m_Name: GameLifeTimeScope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,7 +4,7 @@ This project is a sample project using **SMCP**.
 ![](ReadMeImages/screenShot.png)
 
 ### environment
-- Unity : 2021.3.11f1
+- Unity : 2021.x
 - Screen: 16:9 Portal
 
 ### Plug-ins used

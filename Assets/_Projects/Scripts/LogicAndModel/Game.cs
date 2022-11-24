@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace LogicAndModel
 {
@@ -188,6 +189,7 @@ namespace LogicAndModel
         /// <summary>
         /// 進捗データの保存
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SaveProgressData()
         {
             if (!IsGameOver(Slots, Board))

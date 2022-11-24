@@ -12,7 +12,7 @@ namespace Others
     /// 重い、そもそもPlayerPrefsの用途にそぐわない
     /// ※ デバッグモードでしか動かないので注意
     /// </summary>
-    public class PlayerPrefsGameProgressRepository : IGameProgressRepository
+    public sealed class PlayerPrefsGameProgressRepository : IGameProgressRepository
     {
         const string _playerPrefsKey = "PlayerPrefsGameProgressRepository_SaveDataString";
 
@@ -40,7 +40,7 @@ namespace Others
         public void Delete()
         {
             _data = new GameProgressDataModel();
-            PlayerPrefs.SetString(_playerPrefsKey, string.Empty);
+            PlayerPrefs.DeleteKey(_playerPrefsKey);
         }
     }
 }

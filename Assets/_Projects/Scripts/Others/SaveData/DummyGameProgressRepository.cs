@@ -11,7 +11,7 @@ namespace Others
     /// 一切保存しないダミー
     /// ※ デバッグモードでしか動かないので注意
     /// </summary>
-    public class DummyGameProgressRepository : IGameProgressRepository
+    public sealed class DummyGameProgressRepository : IGameProgressRepository
     {
         public DummyGameProgressRepository()
             => Debug.LogWarning($"{nameof(DummyGameProgressRepository)}が使われています。本番で使わないように注意してください。");

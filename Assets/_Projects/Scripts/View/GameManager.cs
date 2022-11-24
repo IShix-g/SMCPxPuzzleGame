@@ -28,13 +28,12 @@ namespace View
 
         void Awake() => DraggableObjectStatus.Initialize();
 
-        void Start() => DraggableObjectStatus.Current.OnEndDragEvent += OnEndDragEvent;
+        void Start() => DraggableObjectStatus.Current.OnEndDrag += OnEndDrag;
 
         void OnDestroy()
         {
-            Current.Dispose();
-            DraggableObjectStatus.Current.OnEndDragEvent -= OnEndDragEvent;
-            DraggableObjectStatus.Destroy();
+            DraggableObjectStatus.Current.OnEndDrag -= OnEndDrag;
+            DraggableObjectStatus.Release();
         }
 
         void OnApplicationPause(bool pauseStatus)
@@ -50,7 +49,7 @@ namespace View
         /// <summary>
         /// ブロックのドラッグ終了
         /// </summary>
-        void OnEndDragEvent(DraggableObject obj)
+        void OnEndDrag(DraggableObject obj)
         {
             var block = (BlockObject) obj;
             var slot = _slots.GetSlot(block);

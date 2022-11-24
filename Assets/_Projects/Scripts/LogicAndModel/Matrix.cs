@@ -15,6 +15,7 @@ namespace LogicAndModel
         public bool IsDisposed { get; private set; }
         public MatrixSize Size { get; private set; }
         public int ObjectCount { get; private set; }
+        
         T[,] _objects;
 
         public Matrix(T[,] objects)
@@ -56,6 +57,7 @@ namespace LogicAndModel
         {
             Assert.IsNotNull(_objects[column,row], $"存在しないオブジェクトに対してPullが実行されました。column:{column},row:{row}");
             var piece = _objects[column, row];
+            ObjectCount--;
             _objects[column, row] = default;
             OnPull(piece, column, row);
             return piece;
@@ -148,7 +150,8 @@ namespace LogicAndModel
         /// 渡されたcolumnとrowがマトリックス内に収まるか？
         /// </summary>
         public bool IsInRange(int column, int row)
-            => column >= 0 && row >= 0
+            => column >= 0
+               && row >= 0
                && Size.Column > column
                && Size.Row > row;
 

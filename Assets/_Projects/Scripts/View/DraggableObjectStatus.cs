@@ -15,15 +15,15 @@ namespace View
         /// <summary>
         /// ドラッグの開始
         /// </summary>
-        public event Action<DraggableObject> OnBeginDragEvent = delegate { };
+        public event Action<DraggableObject> OnBeginDrag = delegate { };
         /// <summary>
         /// ドラッグ中
         /// </summary>
-        public event Action<DraggableObject> OnDragEvent = delegate { };
+        public event Action<DraggableObject> OnDrag = delegate { };
         /// <summary>
         /// ドラッグの終了
         /// </summary>
-        public event Action<DraggableObject> OnEndDragEvent = delegate { };
+        public event Action<DraggableObject> OnEndDrag = delegate { };
      
         public static DraggableObjectStatus Current { get; private set; }
 
@@ -35,18 +35,12 @@ namespace View
         /// <summary>
         /// 初期化 ゲーム開始時に必ず呼ぶ
         /// </summary>
-        public static void Initialize()
-        {
-            if (Current == default)
-            {
-                Current = new DraggableObjectStatus();
-            }
-        }
+        public static void Initialize() => Current ??= new DraggableObjectStatus();
 
         /// <summary>
         /// 破棄 ゲーム終了時に必ず呼ぶ
         /// </summary>
-        public static void Destroy()
+        public static void Release()
         {
             Current?.Dispose();
             Current = default;
@@ -64,16 +58,16 @@ namespace View
             Assert.IsTrue(IsActive && !IsDragging, "1度に2つはドラッグできません");
             DraggableObject = obj;
             IsDragging = true;
-            OnBeginDragEvent(obj);
+            OnBeginDrag(obj);
         }
         
-        void IDraggableObjectStatusListener.OnDrag(DraggableObject obj) => OnDragEvent(obj);
+        void IDraggableObjectStatusListener.OnDrag(DraggableObject obj) => OnDrag(obj);
 
         void IDraggableObjectStatusListener.OnEndDrag(DraggableObject obj)
         {
             IsDragging = false;
             DraggableObject = default;
-            OnEndDragEvent(obj);
+            OnEndDrag(obj);
         }
 
         public void Dispose()
